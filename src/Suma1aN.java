@@ -1,5 +1,4 @@
 
-
 import static com.sun.source.util.DocTrees.instance;
 import static javax.swing.JOptionPane.showMessageDialog;
 import org.jfree.chart.ChartFactory;
@@ -15,26 +14,26 @@ import org.jfree.data.xy.XYSeriesCollection;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Angel Gabriel
  */
 public class Suma1aN extends javax.swing.JFrame {
-    
+
     private static final String Res = "Resultado: ";
     private static final String TE = "Tiempo de ejecución: ";
-    
+
     public static Suma1aN getInstance() {
-        if (instance == null)
+        if (instance == null) {
             instance = new Suma1aN();
+        }
         return instance;
     }
-    
+
     /**
      * Creates new form Suma1aN
      */
-    public Suma1aN() {
+    private Suma1aN() {
         initComponents();
         addWindowListener(VentanaPrincipal.escuchaHijo);
         collection = new XYSeriesCollection();
@@ -50,7 +49,7 @@ public class Suma1aN extends javax.swing.JFrame {
         panel1.setLayout(new java.awt.BorderLayout());
         panel1.add(oPanel);
         panel1.validate();
-        
+
     }//UNIT COMPONENTS
 
     /**
@@ -61,19 +60,43 @@ public class Suma1aN extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
-        Gauss = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        txtNumero = new javax.swing.JTextField();
         btnSuma1aN = new javax.swing.JButton();
+        Gauss = new javax.swing.JButton();
         btnRecursivo = new javax.swing.JButton();
         lblRes = new javax.swing.JLabel();
-        panel1 = new javax.swing.JPanel();
         lblTS1 = new javax.swing.JLabel();
         lblTG = new javax.swing.JLabel();
         lblTr = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        txtNumero = new javax.swing.JTextField();
+        panel1 = new javax.swing.JPanel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new java.awt.GridBagLayout());
+
+        jLabel1.setText("Numero: ");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 0.03;
+        getContentPane().add(jLabel1, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 0.03;
+        getContentPane().add(txtNumero, gridBagConstraints);
+
+        btnSuma1aN.setText("Suma1An");
+        btnSuma1aN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSuma1aNActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 0.03;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 8);
+        getContentPane().add(btnSuma1aN, gridBagConstraints);
 
         Gauss.setText("Gauss");
         Gauss.setAutoscrolls(true);
@@ -82,13 +105,10 @@ public class Suma1aN extends javax.swing.JFrame {
                 GaussActionPerformed(evt);
             }
         });
-
-        btnSuma1aN.setText("Suma1An");
-        btnSuma1aN.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSuma1aNActionPerformed(evt);
-            }
-        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 0.03;
+        getContentPane().add(Gauss, gridBagConstraints);
 
         btnRecursivo.setText("Recursividad");
         btnRecursivo.addActionListener(new java.awt.event.ActionListener() {
@@ -96,8 +116,41 @@ public class Suma1aN extends javax.swing.JFrame {
                 btnRecursivoActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 0.03;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 8);
+        getContentPane().add(btnRecursivo, gridBagConstraints);
 
         lblRes.setText("Resultado serie numerico");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 0.03;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 8);
+        getContentPane().add(lblRes, gridBagConstraints);
+
+        lblTS1.setText("Tiempo suma 1aN");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 0.03;
+        getContentPane().add(lblTS1, gridBagConstraints);
+
+        lblTG.setText("Tiempo Gauss");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 0.03;
+        getContentPane().add(lblTG, gridBagConstraints);
+
+        lblTr.setText("Tiempo Recursivo");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 0.03;
+        getContentPane().add(lblTr, gridBagConstraints);
 
         panel1.setBackground(new java.awt.Color(204, 204, 255));
 
@@ -109,101 +162,36 @@ public class Suma1aN extends javax.swing.JFrame {
         );
         panel1Layout.setVerticalGroup(
             panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 257, Short.MAX_VALUE)
+            .addGap(0, 697, Short.MAX_VALUE)
         );
 
-        lblTS1.setText("Tiempo suma 1aN");
-
-        lblTG.setText("Tiempo Gauss");
-
-        lblTr.setText("Tiempo Recursivo");
-
-        jLabel1.setText("Numero: ");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(panel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(9, 9, 9)
-                                .addComponent(btnSuma1aN)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(Gauss, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(0, 115, Short.MAX_VALUE)
-                                .addComponent(jLabel1)
-                                .addGap(62, 62, 62)
-                                .addComponent(txtNumero, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblTS1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lblTG)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(123, 123, 123)
-                                .addComponent(btnRecursivo)
-                                .addGap(34, 34, 34))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblTr)
-                                .addGap(48, 48, 48))))))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(225, 225, 225)
-                .addComponent(lblRes)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(txtNumero, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Gauss)
-                            .addComponent(btnSuma1aN)
-                            .addComponent(btnRecursivo))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lblTG, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblTS1)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblTr)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblRes, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
+        gridBagConstraints.gridheight = java.awt.GridBagConstraints.RELATIVE;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weighty = 0.1;
+        gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
+        getContentPane().add(panel1, gridBagConstraints);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-private int extraerNum() throws Exception{
+private int extraerNum() throws Exception {
         int posicion;
         try {
             posicion = Integer.parseInt(txtNumero.getText());
-            if (posicion < 0)
+            if (posicion < 0) {
                 throw new Exception();
+            }
         } catch (Exception e) {
             throw new Exception("Inserta un número natural");
         }
         return posicion;
     }
     private void btnSuma1aNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuma1aNActionPerformed
-        int n=0;
-         try {
+        int n = 0;
+        try {
             n = extraerNum();
         } catch (Exception e) {
             showMessageDialog(this, e.getMessage());
@@ -212,15 +200,15 @@ private int extraerNum() throws Exception{
         long tI = System.nanoTime();
         lblRes.setText(Res + suma1aN(n));
         lblTS1.setText(TE + (System.nanoTime() - tI));
-        n -= 1;
+        series1.clear();
         for (int i = 0; i < n; i++) {
             series1.add(i, 4 * i + 4);
         }
     }//GEN-LAST:event_btnSuma1aNActionPerformed
 
     private void GaussActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GaussActionPerformed
-        int n=0;
-         try {
+        int n = 0;
+        try {
             n = extraerNum();
         } catch (Exception e) {
             showMessageDialog(this, e.getMessage());
@@ -229,15 +217,15 @@ private int extraerNum() throws Exception{
         long tI = System.nanoTime();
         lblRes.setText(Res + suma1aNMGauss(n));
         lblTG.setText(TE + (System.nanoTime() - tI));
-        n -= 1;
+        series2.clear();
         for (int i = 0; i < n; i++) {
             series2.add(i, 3);
         }
     }//GEN-LAST:event_GaussActionPerformed
 
     private void btnRecursivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRecursivoActionPerformed
-        int n=0;
-         try {
+        int n = 0;
+        try {
             n = extraerNum();
         } catch (Exception e) {
             showMessageDialog(this, e.getMessage());
@@ -246,31 +234,34 @@ private int extraerNum() throws Exception{
         long tI = System.nanoTime();
         lblRes.setText(Res + suma1aNR(n));
         lblTr.setText(TE + (System.nanoTime() - tI));
-        n -= 1;
-        for (int i = 0; i < n; i++) {
+        for (int i = 0,no = n-1; i < no; i++) {
             series3.add(i, 3 * i);
         }
     }//GEN-LAST:event_btnRecursivoActionPerformed
-     public static int suma1aN(int n){
-        int s=0; //1 
+    
+    public static int suma1aN(int n) {
+        int s = 0; //1 
         //        1       (n+1)   n                  O(n)   t(n)=4n+4
-        for (int i = 0; i <= n; i++) s=s+i;//2n
+        for (int i = 0; i <= n; i++) {
+            s = s + i;//2n
+        }
         return s;//1 
     }//suma1aN**********************************
-    
+
     public static int suma1aNMGauss(int n) {
-    //              1       1       1
-     return (n * (n + 1) / 2);// 3
+        //              1       1       1
+        return (n * (n + 1) / 2);// 3
     }
+
     public static int suma1aNR(int n) { // 
-     // y constante
+        // y constante
         if (n == 1) {  //1
             return 1; //1
         } else {//                         
             return n + suma1aNR(n - 1); //1+n
         }
     }// *** 3n
-    
+
     /**
      * @param args the command line arguments
      */
@@ -305,8 +296,8 @@ private int extraerNum() throws Exception{
             }
         });
     }
-private static Suma1aN instance;
- private JFreeChart jfc;
+    private static Suma1aN instance;
+    private JFreeChart jfc;
     private XYSeriesCollection collection;
     private XYSeries series1;
     private XYSeries series2;
