@@ -168,8 +168,9 @@ public class SerieDeFibonacci extends javax.swing.JFrame {
         lblResultado.setText(Res + fibonaciiRecursivo(posicion));
         lblTiempoRecursivo.setText(TE + (System.nanoTime() - tI));
         posicion -= 1;
+        series2.clear();
         for (int i = 0; i < posicion; i++) {
-            series2.add(i, Math.pow(4, i));
+            series2.add(i, Math.pow(2,(i-1)));
         }
     }//GEN-LAST:event_btnFibonacciRecursivoActionPerformed
 
@@ -197,6 +198,7 @@ public class SerieDeFibonacci extends javax.swing.JFrame {
         lblResultado.setText(Res + fibonaciiIterativo(posicion));
         lblTiempoIterativo.setText(TE + (System.nanoTime() - tI));
         posicion -= 1;
+        series1.clear();
         for (int i = 0; i < posicion; i++) {
             series1.add(i, 6 * i + 3);
         }
@@ -222,7 +224,7 @@ public class SerieDeFibonacci extends javax.swing.JFrame {
             return 1;//1
         else
             return (fibonaciiRecursivo(n - 1) + fibonaciiRecursivo(n - 2));//n
-    }//4^(n-1)
+    }//2^(n-1)
 
     /**
      * @param args the command line arguments

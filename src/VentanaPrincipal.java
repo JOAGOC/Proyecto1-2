@@ -34,6 +34,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jButton1 = new javax.swing.JButton();
         btnVentanaFibonacci = new javax.swing.JButton();
+        btnVentanaOrdenamientoYBusqueda = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.GridBagLayout());
@@ -46,7 +47,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
-        gridBagConstraints.gridheight = java.awt.GridBagConstraints.RELATIVE;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weighty = 0.5;
         getContentPane().add(jButton1, gridBagConstraints);
 
@@ -57,9 +58,22 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weighty = 0.5;
         getContentPane().add(btnVentanaFibonacci, gridBagConstraints);
+
+        btnVentanaOrdenamientoYBusqueda.setText("Ventana Ordenamiento y Búsqueda");
+        btnVentanaOrdenamientoYBusqueda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVentanaOrdenamientoYBusquedaActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.weighty = 0.5;
+        getContentPane().add(btnVentanaOrdenamientoYBusqueda, gridBagConstraints);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -73,6 +87,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         SerieDeFibonacci.getInstance().setVisible(true);
         setEnabled(false);
     }//GEN-LAST:event_btnVentanaFibonacciActionPerformed
+
+    private void btnVentanaOrdenamientoYBusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVentanaOrdenamientoYBusquedaActionPerformed
+        VentanaArrayEntero.getInstance().setVisible(true);
+        setEnabled(false);
+    }//GEN-LAST:event_btnVentanaOrdenamientoYBusquedaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -118,6 +137,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     };
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnVentanaFibonacci;
+    private javax.swing.JButton btnVentanaOrdenamientoYBusqueda;
     private javax.swing.JButton jButton1;
     // End of variables declaration//GEN-END:variables
 }
