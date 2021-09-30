@@ -42,15 +42,15 @@ public class VentanaArrayEntero extends javax.swing.JFrame {
         addWindowListener(VentanaPrincipal.escuchaHijo);
         m = (javax.swing.table.DefaultTableModel) jTDato.getModel();
         collection = new XYSeriesCollection();
-        series1 = new XYSeries("Ord Burbuja");
+        series1 = new XYSeries("Ord Burbuja (Cuadrático)");
         collection.addSeries(series1);
-        series2 = new XYSeries("QuickSort (Iterativo)");
+        series2 = new XYSeries("QuickSort (Iterativo)(Lineal Logarítmico)");
         collection.addSeries(series2);
-        series3 = new XYSeries("QuickSort (Recursivo)");
+        series3 = new XYSeries("QuickSort (Recursivo)(Lineal Logarítmico)");
         collection.addSeries(series3);
-        series4 = new XYSeries("Búsqueda Secuencial");
+        series4 = new XYSeries("Búsqueda Secuencial (Lineal)");
         collection.addSeries(series4);
-        series5 = new XYSeries("Búsqueda Binaria Recursiva");
+        series5 = new XYSeries("Búsqueda Binaria Recursiva (Logarítmico)");
         collection.addSeries(series5);
         jfc = ChartFactory.createXYLineChart("Coste de algoritmo", "Iteración", "Tiempo", collection,
                 PlotOrientation.VERTICAL, true, false, false);
@@ -74,7 +74,7 @@ public class VentanaArrayEntero extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
@@ -106,6 +106,7 @@ public class VentanaArrayEntero extends javax.swing.JFrame {
         jTDato1 = new javax.swing.JTable();
 
         setMinimumSize(new java.awt.Dimension(380, 460));
+        setPreferredSize(new java.awt.Dimension(920, 383));
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
         jLabel1.setText("Tamaño");
@@ -212,7 +213,10 @@ public class VentanaArrayEntero extends javax.swing.JFrame {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.weightx = 0.1;
         gridBagConstraints.weighty = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(0, 10, 0, 10);
         getContentPane().add(btnOrdenarBurbuja, gridBagConstraints);
 
         lblTiempoOrdenarBurbuja.setText("Tiempo de ejecución: ");
@@ -234,7 +238,10 @@ public class VentanaArrayEntero extends javax.swing.JFrame {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 3;
         gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.weightx = 0.1;
         gridBagConstraints.weighty = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(0, 10, 0, 10);
         getContentPane().add(btnOrdenarQS, gridBagConstraints);
 
         lblTiempoBusquedaSecuencial.setText("Tiempo de ejecución: ");
@@ -258,7 +265,10 @@ public class VentanaArrayEntero extends javax.swing.JFrame {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 6;
         gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.weightx = 0.1;
         gridBagConstraints.weighty = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(0, 10, 0, 10);
         getContentPane().add(btnBusquedaSecuencial, gridBagConstraints);
 
         lblOrdenar2.setText("Buscar:");
@@ -285,7 +295,10 @@ public class VentanaArrayEntero extends javax.swing.JFrame {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 7;
         gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.weightx = 0.1;
         gridBagConstraints.weighty = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(0, 10, 0, 10);
         getContentPane().add(btnBuscarBR, gridBagConstraints);
 
         btnOrdenarQSR.setText("Ordenar QuickSortR");
@@ -298,8 +311,10 @@ public class VentanaArrayEntero extends javax.swing.JFrame {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
         gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weightx = 0.1;
         gridBagConstraints.weighty = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(0, 10, 0, 10);
         getContentPane().add(btnOrdenarQSR, gridBagConstraints);
 
         lblTiempoOrdenarQuickSortR.setText("Tiempo de ejecución: ");
@@ -335,9 +350,14 @@ public class VentanaArrayEntero extends javax.swing.JFrame {
         jScrollPane1.setPreferredSize(new java.awt.Dimension(80, 80));
         jScrollPane1.setVerifyInputWhenFocusTarget(false);
 
-        jTDato.setModel(new javax.swing.table.DefaultTableModel(new Object[][] {
+        jTDato.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
 
-        }, new String[] { "Dato" }));
+            },
+            new String [] {
+                "Dato"
+            }
+        ));
         jScrollPane1.setViewportView(jTDato);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -363,9 +383,14 @@ public class VentanaArrayEntero extends javax.swing.JFrame {
         jScrollPane2.setPreferredSize(new java.awt.Dimension(80, 80));
         jScrollPane2.setVerifyInputWhenFocusTarget(false);
 
-        jTDato1.setModel(new javax.swing.table.DefaultTableModel(new Object[][] {
+        jTDato1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
 
-        }, new String[] { "Dato" }));
+            },
+            new String [] {
+                "Dato"
+            }
+        ));
         jScrollPane2.setViewportView(jTDato1);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
