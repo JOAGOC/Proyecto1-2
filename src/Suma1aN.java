@@ -37,11 +37,11 @@ public class Suma1aN extends javax.swing.JFrame {
         initComponents();
         addWindowListener(VentanaPrincipal.escuchaHijo);
         collection = new XYSeriesCollection();
-        series1 = new XYSeries("Sumatoria de 1 a N ");
+        series1 = new XYSeries("Sumatoria de 1 a N (Lineal)");
         collection.addSeries(series1);
-        series2 = new XYSeries("Sumatoria de 1 a N (Gauss) ");
+        series2 = new XYSeries("Sumatoria de 1 a N (Gauss) (Constante)");
         collection.addSeries(series2);
-        series3 = new XYSeries("Sumatoria de 1 a N (Recursivo)");
+        series3 = new XYSeries("Sumatoria de 1 a N (Recursivo) (Lineal)");
         collection.addSeries(series3);
         jfc = ChartFactory.createXYLineChart("Coste de algoritmo", "Iteración", "Tiempo", collection,
                 PlotOrientation.VERTICAL, true, false, false);

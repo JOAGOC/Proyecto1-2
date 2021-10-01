@@ -1,3 +1,4 @@
+
 import static javax.swing.JOptionPane.showMessageDialog;
 
 import java.awt.event.WindowEvent;
@@ -25,8 +26,9 @@ public class VentanaMultiplicacionMatriz extends javax.swing.JFrame {
      * Creates new form VentanaMultiplicacionMatriz
      */
     public static VentanaMultiplicacionMatriz getInstance() {
-        if (instance == null)
+        if (instance == null) {
             instance = new VentanaMultiplicacionMatriz();
+        }
         return instance;
     }
 
@@ -39,8 +41,12 @@ public class VentanaMultiplicacionMatriz extends javax.swing.JFrame {
         collection = new XYSeriesCollection();
         jfc = ChartFactory.createXYLineChart("Coste de algoritmo", "Iteración", "Tiempo", collection,
                 PlotOrientation.VERTICAL, true, false, false);
-        series1 = new XYSeries("Multiplicación de matrices");
+        series1 = new XYSeries("Multiplicación de matrices (Polinomial (N^3))");
         collection.addSeries(series1);
+        series2 = new XYSeries("LLenar Matriz A(Cuadrática (N^2))");
+        collection.addSeries(series2);
+        series3 = new XYSeries("LLenar Matriz B(Cuadrática (N^2))");
+        collection.addSeries(series3);
         ChartPanel oPanel = new ChartPanel(jfc);
         panelG.setLayout(new java.awt.BorderLayout());
         panelG.add(oPanel);
@@ -263,6 +269,7 @@ public class VentanaMultiplicacionMatriz extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weighty = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(0, 20, 0, 20);
         getContentPane().add(jPanel3, gridBagConstraints);
 
@@ -278,6 +285,7 @@ public class VentanaMultiplicacionMatriz extends javax.swing.JFrame {
         gridBagConstraints.gridy = 1;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
         gridBagConstraints.weightx = 0.5;
+        gridBagConstraints.weighty = 0.001;
         gridBagConstraints.insets = new java.awt.Insets(10, 20, 0, 0);
         getContentPane().add(btnMultiplicar, gridBagConstraints);
 
@@ -287,7 +295,8 @@ public class VentanaMultiplicacionMatriz extends javax.swing.JFrame {
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.ipady = 300;
-        gridBagConstraints.insets = new java.awt.Insets(10, 20, 0, 20);
+        gridBagConstraints.weighty = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(10, 20, 10, 20);
         getContentPane().add(panelG, gridBagConstraints);
 
         lblTiempo.setText("Tiempo de ejecución:");
@@ -297,6 +306,7 @@ public class VentanaMultiplicacionMatriz extends javax.swing.JFrame {
         gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
         gridBagConstraints.weightx = 0.5;
+        gridBagConstraints.weighty = 0.001;
         gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 20);
         getContentPane().add(lblTiempo, gridBagConstraints);
 
@@ -305,10 +315,12 @@ public class VentanaMultiplicacionMatriz extends javax.swing.JFrame {
 
     private void btnCrearM1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnCrearM1ActionPerformed
         a = crearMatriz(txtRen0, txtCol0, m1);
+        graficar(a);
     }// GEN-LAST:event_btnCrearM1ActionPerformed
 
     private void btnCrearM2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnCrearM2ActionPerformed
         b = crearMatriz(txtRen1, txtCol1, m2);
+        graficar(b);
     }// GEN-LAST:event_btnCrearM2ActionPerformed
 
     private MatrizEntero crearMatriz(javax.swing.JTextField txtRen, javax.swing.JTextField txtCol,
@@ -347,14 +359,28 @@ public class VentanaMultiplicacionMatriz extends javax.swing.JFrame {
         }
     }// GEN-LAST:event_btnMultiplicarActionPerformed
 
+    private void graficar(MatrizEntero matriz){
+        int worstCase = (matriz.getRen() < matriz.getCol()) ? matriz.getCol() : matriz.getRen() ;
+            if (matriz.equals(a)) {
+                series2.clear();
+                for (int i = 1; i <= worstCase; i++) {
+                    series2.add(i + 2, i * i);
+                }
+            } else {
+                series3.clear();
+                for (int i = 1; i <= worstCase; i++) {
+                    series3.add(i, i * i);
+                }
+            }
+    }
+    
     private void llenarTabla(DefaultTableModel m, MatrizEntero matriz) {
         try {
-            int M[][] = matriz.getM(); // trae todos los datos del objeto
             m.setRowCount(matriz.getRen());
-            m.setColumnCount(matriz.getCol());// para esto usamos el get en ArrayEntero
+            m.setColumnCount(matriz.getCol());
             for (int i = 0; i < matriz.getRen(); i++) {
                 for (int j = 0; j < matriz.getCol(); j++) {
-                    m.setValueAt(M[i][j], i, j);
+                    m.setValueAt(matriz.getM()[i][j], i, j);
                 }
             }
         } catch (NullPointerException e) {
@@ -379,7 +405,7 @@ public class VentanaMultiplicacionMatriz extends javax.swing.JFrame {
         }
         return r;// 1
     }// 3n+2n+2 -> 5n+2(n)+2n+2 -> 5n2+4n+2(n) + 2n+2 -> 5n3+4n2+4n+2 + 4 =
-     // 5n3+4n2+4n+6
+    // 5n3+4n2+4n+6
 
     /**
      * @param args the command line arguments
@@ -433,6 +459,8 @@ public class VentanaMultiplicacionMatriz extends javax.swing.JFrame {
     private JFreeChart jfc;
     private XYSeriesCollection collection;
     private XYSeries series1;
+    private XYSeries series2;
+    private XYSeries series3;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCrearM1;
     private javax.swing.JButton btnCrearM2;

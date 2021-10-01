@@ -32,9 +32,9 @@ public class SerieDeFibonacci extends javax.swing.JFrame {
         initComponents();
         addWindowListener(VentanaPrincipal.escuchaHijo);
         collection = new XYSeriesCollection();
-        series1 = new XYSeries("Fibonacci (Iterativo)");
+        series1 = new XYSeries("Fibonacci (Iterativo)(Lineal)");
         collection.addSeries(series1);
-        series2 = new XYSeries("Fibonacci (Recursivo)");
+        series2 = new XYSeries("Fibonacci (Recursivo)(Exponencial)");
         collection.addSeries(series2);
         jfc = ChartFactory.createXYLineChart("Coste de algoritmo", "Iteración", "Tiempo", collection,
                 PlotOrientation.VERTICAL, true, false, false);
