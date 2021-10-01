@@ -160,7 +160,47 @@ public class ArrayEntero implements Cloneable{
             }
         }
     }
-
+//************************************************************
+    
+   public  static int particionQuickS(int arr[], int low, int high)
+    {
+        int pivote = arr[high];
+        int i = (low - 1); // index of smaller element
+        for (int j = low; j <= high - 1; j++) {//se ve si el elemento es igual o menor al pivote
+            if (arr[j] <= pivote) {
+                i++;
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+        int temp = arr[i + 1];
+        arr[i + 1] = arr[high];
+        arr[high] = temp;
+ 
+        return i + 1;
+    }
+ 
+ public static void qSort(int arr[], int low, int high)
+    {
+        if (low < high) {
+            int pi = particionQuickS(arr, low, high);
+ 
+            // Recursively sort elements before
+            // partition and after partition
+            qSort(arr, low, pi - 1);
+            qSort(arr, pi + 1, high);
+        }
+    }
+ public  void qSort()
+    {
+           qSort(A,0,tope-1);
+        
+    }
+    
+ //***********************************************************
+    
+    
     public static void quickSortR(int vec[], int inicio, int fin) { //O(x) = n*log(n)
         if (inicio >= fin)
             return;

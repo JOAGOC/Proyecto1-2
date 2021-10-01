@@ -385,9 +385,13 @@ public class VentanaArrayEntero extends javax.swing.JFrame {
     private void btnOrdenarQSActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnOrdenarQSActionPerformed
         try {
             long ti = System.nanoTime();
-            // a.quickSort();
-            lblTiempoOrdenarQuickSortR.setText(TE + (System.nanoTime() - ti));
+            a.qSort();
+            lblTiempoQuickSortIterativo.setText(TE + (System.nanoTime() - ti));
             btnMostrarActionPerformed(null);
+             series2.clear();
+              for (int i = 1,lim=a.getTope()-1; i <= lim; i++) {
+                series2.add(i, i*Math.log(i)*Math.log(i));
+            }
         } catch (NullPointerException e) {
             showMessageDialog(this, anc);
         }
@@ -397,7 +401,7 @@ public class VentanaArrayEntero extends javax.swing.JFrame {
         try {
             a = (ArrayEntero) b.clone();
             btnMostrarActionPerformed(null);
-        } catch (Exception e) {
+        } catch (Exception e) {  //
         }
     }// GEN-LAST:event_btnRestablecerArregloActionPerformed
 
