@@ -390,7 +390,7 @@ public class VentanaArrayEntero extends javax.swing.JFrame {
             btnMostrarActionPerformed(null);
              series2.clear();
               for (int i = 1,lim=a.getTope()-1; i <= lim; i++) {
-                series2.add(i, i*Math.log(i)*Math.log(i));
+                series2.add(i, i*Math.log(i)*Math.log(i));//Funcion 
             }
         } catch (NullPointerException e) {
             showMessageDialog(this, anc);
