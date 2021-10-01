@@ -73,17 +73,21 @@ public class Suma1aN extends javax.swing.JFrame {
         lblTr = new javax.swing.JLabel();
         panel1 = new javax.swing.JPanel();
 
+        setMinimumSize(new java.awt.Dimension(740, 780));
+        setPreferredSize(new java.awt.Dimension(740, 780));
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
         jLabel1.setText("Numero: ");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.weighty = 0.03;
+        gridBagConstraints.weighty = 0.01;
+        gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
         getContentPane().add(jLabel1, gridBagConstraints);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.weighty = 0.03;
+        gridBagConstraints.weighty = 0.01;
+        gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
         getContentPane().add(txtNumero, gridBagConstraints);
 
         btnSuma1aN.setText("Suma1An");
@@ -94,8 +98,8 @@ public class Suma1aN extends javax.swing.JFrame {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.weighty = 0.03;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 8);
+        gridBagConstraints.weighty = 0.01;
+        gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
         getContentPane().add(btnSuma1aN, gridBagConstraints);
 
         Gauss.setText("Gauss");
@@ -107,7 +111,8 @@ public class Suma1aN extends javax.swing.JFrame {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.weighty = 0.03;
+        gridBagConstraints.weighty = 0.01;
+        gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
         getContentPane().add(Gauss, gridBagConstraints);
 
         btnRecursivo.setText("Recursividad");
@@ -118,8 +123,8 @@ public class Suma1aN extends javax.swing.JFrame {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.weighty = 0.03;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 8);
+        gridBagConstraints.weighty = 0.01;
+        gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
         getContentPane().add(btnRecursivo, gridBagConstraints);
 
         lblRes.setText("Resultado serie numerico");
@@ -127,32 +132,35 @@ public class Suma1aN extends javax.swing.JFrame {
         gridBagConstraints.gridy = 1;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.weighty = 0.03;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 8);
+        gridBagConstraints.weighty = 0.01;
+        gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
         getContentPane().add(lblRes, gridBagConstraints);
 
         lblTS1.setText("Tiempo suma 1aN");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridy = 1;
         gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.weighty = 0.03;
+        gridBagConstraints.weighty = 0.01;
+        gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
         getContentPane().add(lblTS1, gridBagConstraints);
 
         lblTG.setText("Tiempo Gauss");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridy = 1;
         gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.weighty = 0.03;
+        gridBagConstraints.weighty = 0.01;
+        gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
         getContentPane().add(lblTG, gridBagConstraints);
 
         lblTr.setText("Tiempo Recursivo");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridy = 1;
         gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.weighty = 0.03;
+        gridBagConstraints.weighty = 0.01;
+        gridBagConstraints.insets = new java.awt.Insets(10, 10, 10, 10);
         getContentPane().add(lblTr, gridBagConstraints);
 
-        panel1.setBackground(new java.awt.Color(204, 204, 255));
+        panel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         javax.swing.GroupLayout panel1Layout = new javax.swing.GroupLayout(panel1);
         panel1.setLayout(panel1Layout);
@@ -162,7 +170,7 @@ public class Suma1aN extends javax.swing.JFrame {
         );
         panel1Layout.setVerticalGroup(
             panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 697, Short.MAX_VALUE)
+            .addGap(0, 567, Short.MAX_VALUE)
         );
 
         gridBagConstraints = new java.awt.GridBagConstraints();

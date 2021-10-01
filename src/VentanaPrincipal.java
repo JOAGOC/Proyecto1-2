@@ -38,6 +38,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         btnVentanaSuma1aN = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Análusis de algoritmos");
+        setMinimumSize(new java.awt.Dimension(480, 720));
+        setPreferredSize(new java.awt.Dimension(480, 720));
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
         jButton1.setText("Ventana Multiplicación de Matrices");
@@ -48,8 +51,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.weighty = 0.5;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(20, 20, 20, 20);
         getContentPane().add(jButton1, gridBagConstraints);
 
         btnVentanaFibonacci.setText("Ventana Fibonacci");
@@ -60,8 +65,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.weighty = 0.5;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(20, 20, 20, 20);
         getContentPane().add(btnVentanaFibonacci, gridBagConstraints);
 
         btnVentanaOrdenamientoYBusqueda.setText("Ventana Ordenamiento y Búsqueda");
@@ -72,8 +79,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.weighty = 0.5;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(20, 20, 20, 20);
         getContentPane().add(btnVentanaOrdenamientoYBusqueda, gridBagConstraints);
 
         btnVentanaSuma1aN.setText("Ventana Suma1aN");
@@ -84,8 +93,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.weighty = 0.5;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(20, 20, 20, 20);
         getContentPane().add(btnVentanaSuma1aN, gridBagConstraints);
 
         pack();

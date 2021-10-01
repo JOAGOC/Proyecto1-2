@@ -17,7 +17,6 @@ import org.jfree.data.xy.XYSeriesCollection;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Angel
@@ -32,8 +31,9 @@ public class VentanaArrayEntero extends javax.swing.JFrame {
      * Creates new form Ventana
      */
     public static VentanaArrayEntero getInstance() {
-        if (instance == null)
+        if (instance == null) {
             instance = new VentanaArrayEntero();
+        }
         return instance;
     }
 
@@ -413,9 +413,9 @@ public class VentanaArrayEntero extends javax.swing.JFrame {
             a.qSort();
             lblTiempoQuickSortIterativo.setText(TE + (System.nanoTime() - ti));
             btnMostrarActionPerformed(null);
-             series2.clear();
-              for (int i = 1,lim=a.getTope()-1; i <= lim; i++) {
-                series2.add(i, i*Math.log(i)*Math.log(i));//Funcion grafica
+            series2.clear();
+            for (int i = 1, lim = a.getTope() - 1; i <= lim; i++) {
+                series2.add(i, i * Math.log(i) * Math.log(i));//Funcion grafica
             }
         } catch (NullPointerException e) {
             showMessageDialog(this, anc);
@@ -435,8 +435,8 @@ public class VentanaArrayEntero extends javax.swing.JFrame {
             lblTiempoOrdenarBurbuja.setText(TE + a.ordenar());
             btnMostrarActionPerformed(null);
             series1.clear();
-            for (int i = 1,lim=a.getTope()-1; i <= lim; i++) {
-                series1.add(i, 6*i*i-9*i+7);
+            for (int i = 1, lim = a.getTope() - 1; i <= lim; i++) {
+                series1.add(i, 6 * i * i - 9 * i + 7);
             }
         } catch (NullPointerException e) {
             showMessageDialog(this, anc);
@@ -452,8 +452,8 @@ public class VentanaArrayEntero extends javax.swing.JFrame {
             showMessageDialog(this, (pos == -1) ? "El número no ha sido encontrado"
                     : "El número ha sido encontrado en la posición " + pos);
             series4.clear();
-            for (int i = 1,lim=a.getTope()-1; i <= lim; i++) {
-                series4.add(i, 4*i+3);
+            for (int i = 1, lim = a.getTope() - 1; i <= lim; i++) {
+                series4.add(i, 4 * i + 3);
             }
         } catch (NullPointerException e) {
             showMessageDialog(this, anc);
@@ -472,8 +472,8 @@ public class VentanaArrayEntero extends javax.swing.JFrame {
             showMessageDialog(this, (pos == -1) ? "El número no ha sido encontrado"
                     : "El número ha sido encontrado en la posición " + pos);
             series5.clear();
-            for (int i = 1,lim=a.getTope()-1; i <= lim; i++) {
-                series5.add(i, Math.log(i)*Math.log(i));
+            for (int i = 1, lim = a.getTope() - 1; i <= lim; i++) {
+                series5.add(i, Math.log(i) * Math.log(i));
             }
         } catch (NullPointerException e) {
             showMessageDialog(this, anc);
@@ -489,8 +489,8 @@ public class VentanaArrayEntero extends javax.swing.JFrame {
             lblTiempoOrdenarQuickSortR.setText(TE + (System.nanoTime() - ti));
             btnMostrarActionPerformed(null);
             series3.clear();
-            for (int i = 1,lim=a.getTope()-1; i <= lim; i++) {
-                series3.add(i, i*Math.log(i));
+            for (int i = 1, lim = a.getTope() - 1; i <= lim; i++) {
+                series3.add(i, i * Math.log(i));
             }
         } catch (NullPointerException e) {
             showMessageDialog(this, anc);
@@ -511,7 +511,7 @@ public class VentanaArrayEntero extends javax.swing.JFrame {
             a.insertar(Integer.parseInt(tFDato.getText()));
             tFDato.setText("");
             tFDato.requestFocus();
-            Object[] x = { a.getA()[a.getTope() - 1] };
+            Object[] x = {a.getA()[a.getTope() - 1]};
             m.addRow(x);
 
         } catch (NullPointerException e) {

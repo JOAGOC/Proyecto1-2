@@ -1,3 +1,4 @@
+
 import java.lang.reflect.Array;
 
 /*
@@ -5,12 +6,11 @@ import java.lang.reflect.Array;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Angel
  */
-public class ArrayEntero implements Cloneable{
+public class ArrayEntero implements Cloneable {
 
     private int tam, tope = 0;
     private int A[];
@@ -56,12 +56,13 @@ public class ArrayEntero implements Cloneable{
             return -1;
         } else {
             int medio = (inicio + fin) / 2;
-            if (numeroBuscado == A[medio])
+            if (numeroBuscado == A[medio]) {
                 return medio;
-            else if (numeroBuscado < A[medio])
+            } else if (numeroBuscado < A[medio]) {
                 return busquedaBinariaR(numeroBuscado, inicio, medio - 1);
-            else
+            } else {
                 return busquedaBinariaR(numeroBuscado, medio + 1, fin);
+            }
         }
     }
 
@@ -161,9 +162,8 @@ public class ArrayEntero implements Cloneable{
         }
     }
 //************************************************************
-    
-   public  static int particionQuickS(int arr[], int low, int high)
-    {
+
+    public static int particionQuickS(int arr[], int low, int high) {
         int pivote = arr[high];
         int i = (low - 1); // index of smaller element
         for (int j = low; j <= high - 1; j++) {//se ve si el elemento es igual o menor al pivote
@@ -177,41 +177,40 @@ public class ArrayEntero implements Cloneable{
         int temp = arr[i + 1];
         arr[i + 1] = arr[high];
         arr[high] = temp;
- 
+
         return i + 1;
     }
- 
- public static void qSort(int arr[], int low, int high)
-    {
+
+    public static void qSort(int arr[], int low, int high) {
         if (low < high) {
             int pi = particionQuickS(arr, low, high);
- 
+
             // Recursively sort elements before
             // partition and after partition
             qSort(arr, low, pi - 1);
             qSort(arr, pi + 1, high);
         }
     }
- public  void qSort()
-    {
-           qSort(A,0,tope-1);
-        
+
+    public void qSort() {
+        qSort(A, 0, tope - 1);
     }
-    
- //***********************************************************
-    
-    
+
+    //***********************************************************
     public static void quickSortR(int vec[], int inicio, int fin) { //O(x) = n*log(n)
-        if (inicio >= fin)
+        if (inicio >= fin) {
             return;
+        }
         int pivote = vec[inicio];
         int elemIzq = inicio + 1;
         int elemDer = fin;
         while (elemIzq <= elemDer) {
-            while (elemIzq <= fin && vec[elemIzq] < pivote)
+            while (elemIzq <= fin && vec[elemIzq] < pivote) {
                 elemIzq++;
-            while (elemDer > inicio && vec[elemDer] >= pivote)
+            }
+            while (elemDer > inicio && vec[elemDer] >= pivote) {
                 elemDer--;
+            }
             if (elemIzq < elemDer) {
                 int temp = vec[elemIzq];
                 vec[elemIzq] = vec[elemDer];
@@ -228,7 +227,7 @@ public class ArrayEntero implements Cloneable{
     }
 
     public void quickSortR() {
-        quickSortR(A,0,tope-1);
+        quickSortR(A, 0, tope - 1);
     }
 
     public void ordenarAsc() {
