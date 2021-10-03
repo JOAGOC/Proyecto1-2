@@ -1,9 +1,11 @@
+
+import javax.swing.UIManager;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Angel
@@ -18,8 +20,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
 
     public static VentanaPrincipal getInstance() {
-        if (instance == null)
+        if (instance == null) {
             instance = new VentanaPrincipal();
+        }
         return instance;
     }
 
@@ -132,20 +135,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            UIManager.setLookAndFeel(new com.formdev.flatlaf.FlatIntelliJLaf());
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         //</editor-fold>
 
@@ -156,7 +148,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             }
         });
     }
-    
+
     private static VentanaPrincipal instance;
     public static final java.awt.event.WindowAdapter escuchaHijo = new java.awt.event.WindowAdapter() {
         @Override
