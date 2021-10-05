@@ -315,12 +315,14 @@ public class VentanaMultiplicacionMatriz extends javax.swing.JFrame {
 
     private void btnCrearM1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnCrearM1ActionPerformed
         a = crearMatriz(txtRen0, txtCol0, m1);
-        graficar(a);
+        if (a != null)
+            graficar(a);
     }// GEN-LAST:event_btnCrearM1ActionPerformed
 
     private void btnCrearM2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnCrearM2ActionPerformed
         b = crearMatriz(txtRen1, txtCol1, m2);
-        graficar(b);
+        if (b != null)
+            graficar(b);
     }// GEN-LAST:event_btnCrearM2ActionPerformed
 
     private MatrizEntero crearMatriz(javax.swing.JTextField txtRen, javax.swing.JTextField txtCol,
